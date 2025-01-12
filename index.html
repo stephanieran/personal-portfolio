@@ -203,6 +203,9 @@
     </script>
 </body>
 <footer>
-    <p>&copy; 2024 Steph Ran. All Rights Reserved.</p>
+    <p>&copy; <span id="year"></span> Steph Ran. All Rights Reserved.</p>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </footer>
 </html>
