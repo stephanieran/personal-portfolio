@@ -225,7 +225,51 @@
     <div class="divider"></div>
     <section id="leave-message-section">
         <h2>Leave a Message!</h2>
-        <p>coming soon :)</p>
+       <!-- <p>coming soon :)</p> -->
+              <!-- 
+            Here's how you can set up FormSubmit for our project:
+            1.	Replace your email:
+                •	In the code, replace myemail@example.com with your actual email address.
+            2.	Activate FormSubmit:
+                •	When you push the code for the first time, you’ll be prompted to activate FormSubmit via an email confirmation.
+                •	During this process, FormSubmit will generate a unique random string associated with your account.
+            3.	Update the unique string:
+                •	Once you receive the string, replace your email in the form with this unique string and push the updated code again.
+            4.	Verification process:
+                •	You might be asked to validate your email again, and another unique string may be displayed.
+                •	However, in most cases, this string remains the same as the first one, so you can safely ignore the second validation.
+            5.	Final testing:
+                •	Once the setup is complete, the form should start working correctly.
+                •	Please test the functionality by submitting a few sample emails to yourself to ensure everything is working as expected.
+        -->
+    
+
+
+        <form action="https://formsubmit.co/harshvaghani98@gmail.com" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+            
+            <!-- 
+                The browser will be redirected to the URL below once the form is submitted.
+                The Query param success is provided as a flag to display a snack bar for confirmation 
+            -->
+            <!-- <input type="hidden" name="_next" value="https://stephran.me/?success=true"> -->
+            <input type="hidden" name="_next" value="http://localhost:5500/?success=true">
+        </form>
+    
+        <!-- Snackbar message container -->
+        <!-- Feel free to edit the snackbar message to say something really cute! :)) -->
+        <input type="hidden" name="_subject" value="Someone sent you a message! :)">
+        <div id="snackbar">We have received your message!</div>
+    </section>
     </section>
 
     <!-- Swiper JS -->
@@ -246,6 +290,31 @@
                 slidesPerView: 'auto'
             });
         });
+
+	        document.addEventListener("DOMContentLoaded", function () {
+            // Function to get query parameters from URL
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+    
+            // Check if the form submission was successful
+            if (getQueryParam("success") === "true") {
+                const snackbar = document.getElementById("snackbar");
+                snackbar.classList.add("show");
+    
+                // Remove the success parameter from the URL without reloading the page
+                const newUrl = window.location.origin + window.location.pathname;
+                window.history.replaceState({}, document.title, newUrl);
+    
+                // Hide snackbar after 3 seconds
+                setTimeout(() => {
+                    snackbar.classList.remove("show");
+                }, 3000);
+            }
+        });
+
+
     </script>
   </body>
 </html>
