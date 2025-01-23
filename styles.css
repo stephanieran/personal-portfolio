@@ -511,3 +511,89 @@ footer {
         padding: 3rem 1rem; /* Adjust padding for smaller screens */
     }
 }
+
+    /* Leave a Message Form Styling */
+    #leave-message-section form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        max-width: 500px;
+        width: 100%;
+        background: #f9f9f9;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #leave-message-section label {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--text-color);
+        align-self: flex-start;
+    }
+
+    #leave-message-section input, 
+    #leave-message-section textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #bfd6c4;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: all 0.3s ease;
+    }
+
+    #leave-message-section input:focus, 
+    #leave-message-section textarea:focus {
+        border-color: #588061;
+        outline: none;
+        box-shadow: 0 0 5px rgba(88, 128, 97, 0.5);
+    }
+
+    #leave-message-section textarea {
+        resize: none;
+        height: 150px;
+    }
+
+    #leave-message-section button {
+        background-color: #588061;
+        color: #ffffff;
+        padding: 0.75rem 1.5rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    #leave-message-section button:hover {
+        background-color: #a5d6b0;
+    }
+
+    /* Snackbar Notification */
+    #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        background-color: #588061;
+        color: #ffffff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 1rem;
+        position: fixed;
+        left: 50%;
+        bottom: 30px;
+        transform: translateX(-50%);
+        font-size: 1.1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease, bottom 0.3s ease;
+    }
+
+    #snackbar.show {
+        visibility: visible;
+        opacity: 1;
+        bottom: 50px;
+    }
