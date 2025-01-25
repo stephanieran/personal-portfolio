@@ -400,6 +400,60 @@ footer {
     height: 375.75px;
 }
 
+/* Testimonials Section Styles */
+.testimonials {
+    padding: 4rem 2rem;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .testimonials-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .card {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .card p {
+    margin: 0;
+  }
+  
+  .card p:first-of-type {
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .card .name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card .role {
+    color: #ccc;
+  }
+  
 
 /* Media Queries for Responsiveness */
 @media (min-width: 1690px) {
@@ -430,6 +484,10 @@ footer {
     #skills-section i {
         font-size: 2.5rem;
     }
+    /* Testimonials Grid Adjustments */
+  .testimonials-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
@@ -458,6 +516,10 @@ footer {
     #skills-section .skills-container {
         gap: 1.25rem;
      }
+      /* Testimonials Grid Adjustments */
+  .testimonials-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }
 
 @media (max-width: 576px) {
@@ -510,4 +572,16 @@ footer {
     #leave-message-section {
         padding: 3rem 1rem; /* Adjust padding for smaller screens */
     }
+    /* Testimonials Grid Adjustments */
+  .testimonials-grid {
+    grid-template-columns: 1fr; /* Stack cards vertically on small screens */
+  }
+
+  .card {
+    padding: 1.5rem; /* Reduce padding for smaller screens */
+  }
+
+  .testimonials-heading {
+    font-size: 1.75rem; /* Adjust heading size for smaller screens */
+  }
 }
