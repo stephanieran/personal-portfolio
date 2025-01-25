@@ -222,6 +222,45 @@
             <i class="devicon-c-plain-wordmark"></i>
         </div>
     </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials bg-black">
+        <div class="container">
+          <h3 class="testimonials-heading text-xl">
+            Don't just take our word for it, see what others are saying about my work.
+          </h3>
+          <div class="testimonials-grid">
+            <!-- Testimonial 1 -->
+            <div class="card">
+              <p>
+                "Working with <b>Steph Ran</b> was an absolute pleasure! Her attention to detail and creativity in designing my website exceeded my expectations. I highly recommend her services to anyone looking for a professional and polished online presence."
+              </p>
+              <p class="name">Sarah Johnson</p>
+              <p class="role">CEO, Bright Solutions</p>
+            </div>
+      
+            <!-- Testimonial 2 -->
+            <div class="card">
+              <p>
+                "I was blown away by the quality of work <b>Steph Ran</b> delivered. She transformed my vision into a stunning, functional website that perfectly represents my brand. Her expertise in HTML, CSS, and JavaScript is truly impressive!"
+              </p>
+              <p class="name">Michael Carter</p>
+              <p class="role">Founder, GreenLeaf Designs</p>
+            </div>
+      
+            <!-- Testimonial 3 -->
+            <div class="card">
+              <p>
+                "<b>Steph Ran</b> is a talented developer who goes above and beyond to ensure client satisfaction. Her ability to solve complex problems and deliver results on time is unmatched. I couldn't be happier with the website she built for me!"
+              </p>
+              <p class="name">Emily Davis</p>
+              <p class="role">Owner, Bloom & Grow</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
     <div class="divider"></div>
     <section id="leave-message-section">
         <h2>Leave a Message!</h2>
@@ -235,6 +274,65 @@
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+    //   Testimonials
+    // Select the testimonials section and cards
+const testimonialsSection = document.querySelector('.testimonials');
+const cards = document.querySelectorAll('.card');
+
+// Apply styles to the testimonials section
+testimonialsSection.style.padding = '4rem 2rem';
+testimonialsSection.style.backgroundColor = '#000';
+testimonialsSection.style.color = '#fff';
+testimonialsSection.style.textAlign = 'center';
+
+// Style the container
+const container = document.querySelector('.container');
+container.style.maxWidth = '1200px';
+container.style.margin = '0 auto';
+
+// Style the heading
+const heading = document.querySelector('.testimonials-heading');
+heading.style.fontSize = '2rem';
+heading.style.marginBottom = '2rem';
+
+// Style the testimonials grid
+const testimonialsGrid = document.querySelector('.testimonials-grid');
+testimonialsGrid.style.display = 'grid';
+testimonialsGrid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
+testimonialsGrid.style.gap = '2rem';
+
+// Style each card
+cards.forEach(card => {
+  card.style.backgroundColor = '#1a1a1a';
+  card.style.padding = '2rem';
+  card.style.borderRadius = '10px';
+  card.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+  card.style.transition = 'transform 0.3s ease';
+
+  // Add hover effect
+  card.addEventListener('mouseenter', () => {
+    card.style.transform = 'translateY(-10px)';
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'translateY(0)';
+  });
+
+  // Style the text inside the card
+  const paragraphs = card.querySelectorAll('p');
+  paragraphs.forEach((p, index) => {
+    if (index === 0) {
+      p.style.fontStyle = 'italic';
+      p.style.marginBottom = '1rem';
+    } else if (p.classList.contains('name')) {
+      p.style.fontWeight = 'bold';
+      p.style.marginBottom = '0.5rem';
+    } else if (p.classList.contains('role')) {
+      p.style.color = '#ccc';
+    }
+  });
+});
+
+
         document.addEventListener("DOMContentLoaded", function () {
             // Automatically update the copyright year
             document.getElementById('year').textContent = new Date().getFullYear();
