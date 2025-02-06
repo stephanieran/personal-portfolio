@@ -3,7 +3,6 @@
     --text-color: #1a1c20;
     --link-color: #ffffff;
     --background-color: #eeeff1;
-    font-size: 17px; /* Set the base font size */
 }
 
 * {
@@ -13,6 +12,10 @@
 }
 
 html {
+    /* Fallback for older/legacy browsers that do not support rem units (not strictly needed) */
+    font-size: 17px;
+    /* Root font size */
+    font-size: 1.063rem;
     scroll-behavior: smooth;
     scroll-padding-top: 5rem; /* Adjust this value based on the height of your nav bar */
 }
