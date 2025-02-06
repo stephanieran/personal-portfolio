@@ -93,6 +93,7 @@ section:nth-of-type(even) {
 }
 
 /* Section Heading Styles */
+section h1,
 section h2 {
     font-size: 3rem;
     font-weight: 700;
@@ -102,6 +103,7 @@ section h2 {
     position: relative;
 }
 
+section h1::after,
 section h2::after {
     content: '';
     position: absolute;
