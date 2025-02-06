@@ -1,31 +1,35 @@
 /* Base Styles */
 :root {
+    --light-green: #bfd6c4;
     --text-color: #1a1c20;
-    --link-color: #ffffff;
+    --link-color: #fff;
     --background-color: #eeeff1;
-    font-size: 17px; /* Set the base font size */
 }
 
-* {
+* , *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 html {
+    /* Root font size: fallback for older/legacy browsers that do not support rem units (not strictly needed) */
+    font-size: 17px;
+    /* Root font size */
+    font-size: 1.063rem;
     scroll-behavior: smooth;
     scroll-padding-top: 5rem; /* Adjust this value based on the height of your nav bar */
 }
 
 @font-face {
     font-family: "Steph";
-    src: url("fonts/steph-font.ttf");
+    src: url("../fonts/steph-font.ttf");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Steph";
-    src: url("fonts/steph-font-bold.ttf");
+    src: url("../fonts/steph-font-bold.ttf");
     font-weight: bold;
 }
 
@@ -39,7 +43,7 @@ a {
 }
 
 nav {
-    background-color: #bfd6c4;
+    background-color: var(--light-green);
     display: flex;
     justify-content: space-between;
     padding: 0 3.125rem;
@@ -93,6 +97,7 @@ section:nth-of-type(even) {
 }
 
 /* Section Heading Styles */
+section h1,
 section h2 {
     font-size: 3rem;
     font-weight: 700;
@@ -102,12 +107,13 @@ section h2 {
     position: relative;
 }
 
+section h1::after,
 section h2::after {
     content: '';
     position: absolute;
     width: 100px;
     height: 4px;
-    background-color: #bfd6c4;
+    background-color: var(--light-green);;
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
@@ -214,7 +220,7 @@ section h2::after {
 }
 
 #experience-section .experience-box {
-    background-color: #bfd6c4;
+    background-color: var(--light-green);;
     padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
