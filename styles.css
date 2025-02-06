@@ -1,5 +1,6 @@
 /* Base Styles */
 :root {
+    --light-green: #bfd6c4;
     --text-color: #1a1c20;
     --link-color: #fff;
     --background-color: #eeeff1;
@@ -42,7 +43,7 @@ a {
 }
 
 nav {
-    background-color: #bfd6c4;
+    background-color: var(--light-green);
     display: flex;
     justify-content: space-between;
     padding: 0 3.125rem;
@@ -112,7 +113,7 @@ section h2::after {
     position: absolute;
     width: 100px;
     height: 4px;
-    background-color: #bfd6c4;
+    background-color: var(--light-green);;
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
@@ -219,7 +220,7 @@ section h2::after {
 }
 
 #experience-section .experience-box {
-    background-color: #bfd6c4;
+    background-color: var(--light-green);;
     padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
